@@ -5,9 +5,10 @@ const db = require("../models");
 // Get all Submissions in the database
 router.get("/", (req, res) => {
     if (!req.session.admin) {
+        console.log(req.session);
         res.status(401).send("login required")
     } else {
-        db.Submission.find({})
+        db.Submission.findAll({})
             .then((allSubmissions) => {
                 res.json(allSubmissions);
             })
@@ -45,3 +46,5 @@ router.post("/new", (req, res) => {
         res.status(500).end();
     });
 });
+
+module.exports = router;
