@@ -30,12 +30,12 @@ db.sequelize.sync().then(function () {
 });
 
 // CORS
-// app.use(
-//     cors({
-//         origin: ["https://nwlife-connect.herokuapp.com"],
-//         credentials: true
-//     })
-// );
+app.use(
+    cors({
+        origin: ["https://nwlife-connect.herokuapp.com"],
+        credentials: true
+    })
+);
 
 let myStore = new SequelizeStore({
   db: sequelize,
