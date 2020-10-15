@@ -52,8 +52,8 @@ let myStore = new SequelizeStore({
       store: myStore,
       cookie: {
         maxAge: 2 * 60 * 60 * 1000,
-        // sameSite: "none",
-        // secure: true,
+        sameSite: "none",
+        secure: true,
       }
     })
   );
