@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/submission");
+const Submission = require("../models/submission");
 
 // Post new form submission
 router.post("/new", (req, res) => {
-    db.Submission.create({
+    Submission.create({
         updating: req.body.updating,
         name: req.body.name ,
         address: req.body.address ,
