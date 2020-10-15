@@ -32,8 +32,9 @@ mongoose
 // CORS
 app.use(
   cors({
-    origin: ["http://nwlife-connect.herokuapp.com","http://localhost:3000" ],
+    origin: ["https://nwlife-connect.herokuapp.com","http://localhost:3000" ],
     credentials: true,
+    allowedHeaders:"*"
   })
 );
 
