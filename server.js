@@ -1,4 +1,6 @@
 const express = require("express");
+const session = require("express-session");
+const MongoStore = require('connect-mongo')(session);
 const cors = require("cors");
 const mongoose = require("mongoose");
 require('dotenv').config();
@@ -35,6 +37,23 @@ app.use(
     origin: ["https://nwlife-connect.herokuapp.com","http://localhost:3000" ],
     credentials: true,
     allowedHeaders:"*"
+  })
+);
+
+//SESSION
+// for heroku deploy uncomment proxy, samesite and secure
+app.use(
+  session({
+    secret: "tacokat",
+    resave: false,
+    saveUninitialized: false,
+    proxy: true,
+    store: new MongoStore({mongooseConnection: mongoose.connection}),
+    cookie: {
+      maxAge: 2 * 60 * 60 * 1000,
+      sameSite: "none",
+      secure: true,
+    }
   })
 );
 
