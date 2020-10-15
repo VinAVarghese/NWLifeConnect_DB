@@ -1,34 +1,26 @@
 {
-  "name": "nwlifeconnect_db",
+  "name": "nwlifeconnect",
   "version": "1.0.0",
-  "description": "",
+  "description": "connect_db",
   "main": "server.js",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.3",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5",
-    "sqlite3": "^5.0.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VinAVarghese/NWLifeConnect_DB.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Vincent",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VinAVarghese/NWLifeConnect_DB/issues"
   },
-  "homepage": "https://github.com/VinAVarghese/NWLifeConnect_DB#readme"
+  "homepage": "https://github.com/VinAVarghese/NWLifeConnect_DB#readme",
+  "dependencies": {
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  }
 }

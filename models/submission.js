@@ -1,24 +1,31 @@
-module.exports = function(sequelize, DataTypes) {
-    let Submission = sequelize.define("Submission", {
-        name: DataTypes.STRING,
-        address: DataTypes.STRING,
-        apt: DataTypes.STRING,
-        city: DataTypes.STRING,
-        zip: DataTypes.STRING,
-        email: DataTypes.STRING,
-        phone: DataTypes.STRING,
-        birthday: DataTypes.STRING,
-        occupation: DataTypes.STRING,
-        age: DataTypes.STRING,
-        invitedBy: DataTypes.STRING,
-        attendance: DataTypes.STRING,
-        nextStepFreshStart: DataTypes.STRING,
-        nextStepLordsPrayer: DataTypes.STRING,
-        readyToServe: DataTypes.STRING,
-        prayerPraise: DataTypes.STRING,
-        confidential: DataTypes.STRING
-    });
-    return Submission;
-}
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-        
+const submissionSchema = new Schema({
+  updating:Boolean,
+  name: {
+    type: String,
+    required: true,
+  },
+  address: String,
+  apt: String,
+  city: String,
+  zip: String,
+  email: String,
+  phone: String,
+  birthday: String,
+  occupation: String,
+  age: String,
+  invitedBy: String,
+  attendance: String,
+  nextStepRelationship: Boolean,
+  readyToServe: Boolean,
+  nextStepOther: Boolean,
+  otherContent: String,
+  prayerPraise: String,
+  confidential: Boolean
+}, { timestamps: true });
+
+const Submission = mongoose.model("Submission", submissionSchema);
+
+module.exports = Submission;
