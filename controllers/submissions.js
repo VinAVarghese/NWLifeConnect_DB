@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Submission = require("../models/submission");
+let moment = require('moment');
 
 // Post new form submission
 router.post("/new", (req, res) => {
@@ -23,7 +24,8 @@ router.post("/new", (req, res) => {
         nextStepOther: req.body.nextStepOther ,
         otherContent: req.body.otherContent ,
         prayerPraise: req.body.prayerPraise ,
-        confidential: req.body.confidential 
+        confidential: req.body.confidential,
+        dateSubmitted: moment().format("MM/DD/YYYY")
     }).then((newSubmission) => {
         res.json(newSubmission);
     }).catch((err) => {

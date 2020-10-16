@@ -23,7 +23,8 @@ const submissionSchema = new Schema({
   nextStepOther: Boolean,
   otherContent: String,
   prayerPraise: String,
-  confidential: Boolean
+  confidential: Boolean,
+  dateSubmitted: String
 }, { timestamps: true });
 
 const Submission = mongoose.model("Submission", submissionSchema);
